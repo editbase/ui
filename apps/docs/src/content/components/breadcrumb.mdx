@@ -1,0 +1,58 @@
+---
+title: 'Breadcrumb'
+description: 'A navigational component that shows the user’s location within a website.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center">
+   <ui-breadcrumb>
+    <nav>
+      <ol>
+        <li><a href="#">Home</a></li>
+        <li data-separator></li>
+
+
+        <ui-popover data-align="left">
+          <input type="radio" name="popover" id="trigger"/>
+          <label for="trigger" type="button">
+            <li><i class="ri-more-fill"></i></li>
+          </label>
+
+          <input type="radio" name="popover" id="overlay" checked/>
+          <label for="overlay" data-overlay></label>
+
+          <div data-popover-content>
+            <div>
+              <a href="#">Documentation</a>
+              <a href="#">Themes</a>
+              <a href="#">GitHub</a>
+            </div>
+          </div>
+        </ui-popover>
+
+        <li data-separator></li>
+        <li><a href="#">Data Fetching</a></li>
+        <li data-separator></li>
+        <li><a href="#">Caching and Revalidating</a></li>
+      </ol>
+    </nav>
+   </ui-breadcrumb>
+  </div>
+</ui-component-preview>

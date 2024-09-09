@@ -1,0 +1,113 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+import PageLayout from '../../../layouts/PageLayout.astro';
+import Link from '../../../components/Link.astro';
+import Doc from '../../../components/Doc.astro';
+
+export async function getStaticPaths() {
+	const components = await getCollection('components');
+	const docs = await getCollection('docs');
+
+	return components.map((component) => {
+		const componentIndex = components.findIndex((x) => x.slug === component.slug);
+		let prevDoc = components[componentIndex - 1];
+		let nextDoc = components[componentIndex + 1];
+
+		if(prevDoc?.id || nextDoc?.id) {
+
+			if (!prevDoc) {
+				prevDoc = {
+					slug: "usage",
+					id: "usage",
+					data: {
+						title: "Usage",
+					},
+				}
+			}
+
+			if (!nextDoc) {
+				nextDoc = {}
+			}
+			
+			return {
+				params: { slug: component.slug },
+				props: {
+					docs,
+					components,
+					component,
+					prevDoc,
+					nextDoc
+				},
+			}
+		}
+	});
+}
+
+type Props = CollectionEntry<'components'>;
+
+const props = Astro.props;
+---
+
+<PageLayout title={props.component.data.title} description={props.component.data.description}>
+	<div class="flex flex-row relative items-start justify-start">
+		<aside class="block text-sm min-w-[250px] sticky top-[50px] h-[calc(100vh_-_50px)]">
+			<div class="flex flex-col gap-7 overflow-scroll h-full relative py-6 pr-5 border-r border-muted-foreground/10">
+				{[
+					{
+						title: 'Overview',
+						items: props.docs.map(({ data: { title }, slug }) => ({ name: title, href: `/docs/${slug}` }))
+					},
+					{
+						title: 'Components',
+						items: props.components.map(({ data: { title }, slug }) => ({ name: title, href: `/docs/components/${slug}`, slug }))
+					}
+				].map(({ title, items }) => (
+					<div class="flex flex-col gap-3">
+						<span class="text-muted-foreground text-xs font-semibold">{title}</span>
+							<div class="flex flex-col">
+								{items.map(({ name, href, slug }) => (
+									<Link 
+										href={href} 
+										class="text-foreground font-light text-[0.8rem] data-[active=true]:bg-muted-foreground/15 px-5 py-1.5 rounded"
+										hx-target="section#content"
+										hx-get={`/docs/components/partial/${slug}`}
+										hx-replace-url={`/docs/components/${slug}`}
+										hx-swap="outerHTML"
+									>
+										{name}
+									</Link>
+								))}
+							</div>
+					</div>
+				))}
+			</div>
+
+			<div class="absolute bottom-0 left-0 right-0 h-[20px] bg-gradient-to-b from-transparent to-background mr-5 pointer-events-none"></div>
+			<div class="absolute bottom-0 left-0 right-0 h-[15px] bg-gradient-to-b from-transparent to-background/50 mr-5 pointer-events-none"></div>
+
+		</aside>
+
+		<Doc component={props.component} prevDoc={props.prevDoc} nextDoc={props.nextDoc} />
+
+		<aside class="sticky top-[50px] max-h-[calc(100vh_-_50px)] w-[250px] flex flex-col gap-3 py-6">
+			<div class="text-muted-foreground text-xs font-semibold">On this page</div>
+			<div class="flex flex-col">
+				{[
+					"Installation",
+					"Usage",
+					"Props",
+					"Slots",
+					"Events",
+					"CSS Variables"
+				].map((name) => (
+					<div 
+						class="text-[0.8rem] font-light py-1 text-muted-foreground border-r border-muted-foreground/20 first:text-foreground first:border-foreground"
+					>
+						{name}
+					</div>
+				))}
+			</div>
+		</aside>
+	</div>
+</PageLayout>

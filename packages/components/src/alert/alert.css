@@ -1,0 +1,19 @@
+ui-alert {
+  @apply flex flex-row border border-muted-foreground/15 rounded-lg px-5 py-4 gap-2 items-start text-sm;
+}
+
+ui-alert i {
+  @apply text-xl leading-none pt-0.5;
+}
+
+ui-alert [data-alert-content] {
+  @apply flex flex-col gap-0.5;
+}
+
+ui-alert h4 {
+  @apply font-medium;
+}
+
+ui-alert p {
+  @apply font-light;
+}

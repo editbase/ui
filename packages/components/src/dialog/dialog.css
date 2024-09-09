@@ -1,0 +1,103 @@
+ui-dialog {
+  @apply flex w-max;
+}
+
+ui-dialog input[type="radio"] {
+  @apply hidden;
+}
+
+ui-dialog label[data-trigger] button {
+  @apply pointer-events-none select-none;
+}
+
+
+/* Overlay */
+ui-dialog label[data-overlay] {
+  @apply 
+    fixed 
+    inset-0
+    z-50 
+    bg-black/80
+    opacity-0 
+    pointer-events-none 
+    transition-all 
+    duration-300;
+}
+
+ui-dialog input[type="radio"]:not(:checked) + label[data-overlay] {
+  @apply 
+    opacity-100 
+    pointer-events-auto;
+}
+
+/* Modal */
+ui-dialog *[data-dialog-content] {
+  @apply 
+    fixed 
+    inset-x-0 
+    max-w-max 
+    mx-auto 
+    inset-y-0 
+    max-h-max 
+    my-auto 
+    z-50 
+    flex 
+    flex-col 
+    items-center 
+    justify-center 
+    opacity-0 
+    pointer-events-none 
+    bg-background
+    border
+    border-muted-foreground/15
+    rounded-lg
+    overflow-hidden
+    translate-y-1
+    scale-95
+    transition-all 
+    duration-300;
+}
+
+ui-dialog *[data-dialog-content] h3 {
+  @apply text-[1.1em] font-medium tracking-[-0.015em];
+}
+
+ui-dialog *[data-dialog-content] p {
+  @apply text-[0.85em] font-light max-w-md text-muted-foreground;
+}
+
+ui-dialog input[data-trigger]:checked ~ *[data-dialog-content] {
+  @apply opacity-100 translate-y-0 scale-100 pointer-events-auto;
+}
+
+ui-dialog *[data-dialog-content] > * {
+  @apply max-w-lg p-7 flex flex-col gap-4 bg-muted-foreground/5;
+}
+
+/* Modal Action Buttons */
+
+ui-dialog *[data-action-buttons] {
+  @apply flex flex-row gap-2 justify-end;
+}
+
+ui-dialog *[data-action-buttons] button {
+  @apply bg-foreground text-background px-4 py-2 rounded-md text-xs;
+}
+
+ui-dialog *[data-action-buttons] label {
+  @apply cursor-pointer;
+}
+
+ui-dialog *[data-action-buttons] label button {
+  @apply pointer-events-none bg-background text-foreground border border-muted-foreground/20 select-none;
+}
+
+/* Trigger button */
+ui-dialog label[data-trigger] {
+  @apply cursor-pointer;
+}
+
+/* Body Scroll Lock */
+body:has(ui-dialog input[id="trigger"]:checked) {
+  @apply overflow-hidden;
+}

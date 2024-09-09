@@ -1,0 +1,42 @@
+---
+title: 'Avatar'
+description: 'A circular image element that represents a user.'
+---
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center">
+    <ui-avatar class="h-20 w-20">
+      <img 
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiA5Jz48L3N2Zz4="
+        data-image
+      />
+      <svg 
+        viewBox="0 0 100 100" 
+        preserveAspectRatio="xMinYMin meet" 
+        data-fallback
+      >
+        <foreignObject width="100px" height="100px">
+          <div width="100px" height="100px">
+            UI
+          </div>
+        </foreignObject>
+      </svg>
+    </ui-avatar>
+  </div>
+</ui-component-preview>

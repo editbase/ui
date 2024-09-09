@@ -1,0 +1,27 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+type Props = HTMLAttributes<'a'> & {
+  hxTarget?: string;
+  hxIndicator?: string;
+  hxSwap?: string;
+  hxTrigger?: string;
+  hxRequest?: string;
+  hxPrompt?: string;
+  hxConfirm?: string;
+  hxPatch?: string;
+  hxDelete?: string;
+  hxGet?: string;
+  hxPost?: string;
+  hxPut?: string;
+};
+
+const { href, ...props } = Astro.props;
+const { pathname } = Astro.url;
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + subpath?.[0];
+---
+
+<a href={href} data-active={isActive ? 'true' : undefined} {...props}>
+  <slot />
+</a>

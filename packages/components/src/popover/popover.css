@@ -1,0 +1,129 @@
+ui-popover {
+  @apply relative flex flex-col;
+}
+
+ui-popover[data-align="center"] [data-popover-content] > *  {
+  @apply left-[50%] translate-x-[-50%];
+}
+
+ui-popover[data-align="left"] [data-popover-content] > *  {
+  @apply left-0;
+}
+
+ui-popover[data-align="right"] [data-popover-content] > *  {
+  @apply right-0;
+}
+
+/* TODO: add more alignments */
+
+ui-popover input[type="radio"] {
+  @apply hidden;
+}
+
+ui-popover label[for="trigger"] button {
+  @apply pointer-events-none select-none;
+}
+
+
+/* Overlay */
+ui-popover label[data-overlay] {
+  @apply 
+    fixed 
+    inset-0
+    z-50 
+    opacity-0 
+    pointer-events-none 
+    transition-all 
+    duration-300;
+}
+
+ui-popover input[type="radio"]:not(:checked) + label[for="overlay"] {
+  @apply 
+    opacity-100 
+    pointer-events-auto;
+}
+
+/* Modal */
+ui-popover *[data-popover-content] {
+  @apply 
+    /* absolute  */
+    flex 
+    /* flex-col 
+    items-center 
+    justify-center */
+    opacity-0 
+    pointer-events-none 
+    bg-background
+    overflow-visible
+    
+    duration-300
+    /* mt-2 */
+    min-w-max
+    z-[99]
+}
+
+ui-popover *[data-popover-content] h3 {
+  @apply text-[1.1em] font-medium tracking-[-0.015em];
+}
+
+ui-popover *[data-popover-content] p {
+  @apply text-[0.85em] font-light max-w-md text-muted-foreground;
+}
+
+ui-popover input[id="trigger"]:checked ~ *[data-popover-content] {
+  @apply opacity-100 pointer-events-auto;
+}
+
+ui-popover *[data-popover-content] > * {
+  @apply 
+    absolute
+    max-w-xl 
+    flex 
+    flex-col 
+    min-w-max
+    border
+    border-muted-foreground/20
+    bg-background
+    rounded-lg
+    mt-2
+    -translate-y-1
+    scale-95
+    transition-all
+    /* inset-x-0 */
+    z-[99];
+}
+
+ui-popover input[id="trigger"]:checked ~ *[data-popover-content] > * { 
+  @apply translate-y-0 scale-100;
+}
+
+/* Modal Action Buttons */
+
+ui-popover *[data-action-buttons] {
+  @apply flex flex-row gap-2 justify-end;
+}
+
+ui-popover *[data-action-buttons] button {
+  @apply bg-foreground text-background px-4 py-2 rounded-md text-xs;
+}
+
+ui-popover *[data-action-buttons] label {
+  @apply cursor-pointer;
+}
+
+ui-popover *[data-action-buttons] label button {
+  @apply pointer-events-none bg-background text-foreground border border-muted-foreground/20 select-none;
+}
+
+/* Trigger button */
+ui-popover label[for="trigger"] {
+  @apply cursor-pointer;
+}
+
+/* Body Scroll Lock */
+/* body:has(ui-popover input[id="trigger"]:checked) {
+  @apply overflow-hidden;
+} */
+
+
+/* TODO: add in position sticky as intersection observer */

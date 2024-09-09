@@ -1,0 +1,30 @@
+ui-hover-card [data-trigger] {
+  @apply font-semibold cursor-pointer;
+}
+
+ui-hover-card [data-content] {
+  @apply 
+    opacity-0 
+    absolute 
+    left-[50%] 
+    translate-x-[-50%] 
+    z-50 
+    bg-background 
+    rounded-md 
+    border 
+    border-muted-foreground/20 
+    p-4 
+    text-sm 
+    transition-all 
+    ease-in-out 
+    duration-500 
+    mt-2 
+    max-w-xs
+    -translate-y-1
+    scale-95;
+}
+
+ui-hover-card [data-trigger]:hover + [data-content] {
+  @apply opacity-100 translate-y-0 scale-100 delay-1000
+}
+

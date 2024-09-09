@@ -1,0 +1,47 @@
+ui-combobox ui-popover label[for="trigger"] {
+  @apply w-[200px] border border-muted-foreground/20 rounded-md text-sm h-[40px] flex justify-between items-center px-4;
+}
+
+ui-combobox ui-popover label i {
+  @apply text-muted-foreground;
+}
+
+ui-combobox ui-popover [data-popover-content] input[type="radio"] {
+  @apply hidden;
+}
+
+ui-combobox ui-popover [data-popover-content] > * {
+  @apply p-1
+}
+
+ui-combobox ui-popover [data-popover-content] input[type="radio"]:checked + label {
+  @apply bg-muted-foreground/15;
+}
+
+ui-combobox ui-popover [data-popover-content] label {
+  @apply bg-transparent rounded flex justify-start items-center text-sm py-1.5
+}
+
+ui-combobox ui-popover [data-popover-content] label::before {
+  content: '';
+  @apply w-3 h-1.5 border-transparent border-l border-b -rotate-45 mb-1 mx-2
+}
+
+ui-combobox ui-popover [data-popover-content] input[type="radio"]:checked + label::before {
+  @apply border-foreground
+}
+
+/* selection in trigger label */
+
+
+ui-combobox {
+  @apply flex flex-row relative items-center
+}
+
+ui-combobox > select {
+  @apply appearance-none bg-transparent hover:bg-muted-foreground/10 hover:border-transparent border border-muted-foreground/20 text-sm rounded-lg  block p-2.5 w-[200px] transition-colors outline-none ring-0;
+}
+
+ui-combobox > i {
+  @apply absolute right-3 text-muted-foreground/60 pointer-events-none
+}

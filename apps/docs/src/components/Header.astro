@@ -1,0 +1,57 @@
+---
+import Link from './Link.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<header class="w-full h-[50px] flex flex-row justify-between bg-background/80 backdrop-blur-lg sticky top-0 z-50 border-b border-muted-foreground/10">
+	<nav class="container flex flex-row justify-between items-center">
+		<div class="flex flex-row items-center gap-8">
+			<Link 
+				href="/" 
+				class="font-medium flex flex-row items-center justify-center gap-1.5"
+				hx-get={`/partial/`}
+				hx-replace-url={`/`}
+				hx-target="main"
+			>
+				<i class="ri-asterisk text-xl"></i>
+				<span class="tracking-[-0.005em] font-bold text-[0.9em]">Editbase UI</span>
+			</Link>
+
+			<div class="flex flex-row items-center gap-4">
+					 {[
+						{ name: 'Docs', href: '/docs' },
+						{ name: 'Components', href: '/components' },
+						{ name: 'Themes', href: '/themes' },
+						{ name: 'Examples', href: '/examples' },
+					].map(({ name, href }) => (
+						<Link href={href} class="text-[0.8em] text-muted-foreground">{name}</Link>
+					))}
+			</div>
+		</div>
+
+
+		<div class="flex flex-row items-center gap-4">
+			<label class="w-[260px] h-[30px] flex flex-row items-center rounded-md border transition-colors cursor-text bg-muted-foreground/5 border-muted-foreground/15 focus-within:border-muted-foreground/50">
+				<div class="pl-2.5 pr-1.5 h-full flex items-center">
+					<i class="ri-search-line text-[0.9rem]"></i>
+				</div>
+				<input type="search" name="search" class="w-full bg-transparent border-transparent outline-none py-1 pr-2 font-light placeholder-muted-foreground" style="font-size: 0.75rem;" placeholder="Search...">
+			</label>
+
+			<div class="flex flex-row items-center gap-2">	
+				{
+					[
+						{ name: 'Github', icon: 'ri-github-line' },
+						{ name: 'Controls', icon: 'ri-sound-module-line' },
+						{ name: 'Export', icon: 'ri-upload-line' },
+					].map(({ name, icon }) => (
+						<button class="w-[33px] h-[30px] flex flex-row items-center justify-center rounded-md bg-muted-foreground/10">
+							<i class={icon}></i>
+						</button>
+					))
+				}
+			</div>
+		</div>
+
+	</nav>
+</header>

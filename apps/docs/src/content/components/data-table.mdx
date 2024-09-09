@@ -1,0 +1,79 @@
+---
+title: 'Data Table'
+description: 'A component that displays tabular data in a structured format.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center flex-col gap-3">
+    <ui-data-table>
+      <table class="w-full bg-background shadow-md overflow-hidden">
+        <thead class="bg-muted-foreground/10">
+              <tr>
+                  <th class="px-4 py-2">
+                      <a href="?sort=name" class="text-muted-foreground font-semibold">
+                          Fruit Name
+                          <span class="sort-indicator"></span>
+                      </a>
+                  </th>
+                  <th class="px-4 py-2">
+                      <a href="?sort=color" class="text-muted-foreground font-semibold">
+                          Color
+                          <span class="sort-indicator"></span>
+                      </a>
+                  </th>
+                  <th class="px-4 py-2">
+                      <a href="?sort=price" class="text-muted-foreground font-semibold">
+                          Price
+                          <span class="sort-indicator"></span>
+                      </a>
+                  </th>
+              </tr>
+          </thead>
+        <tbody>
+          <tr>
+              <td class="border px-4 py-2">Apple</td>
+              <td class="border px-4 py-2">Red</td>
+              <td class="border px-4 py-2">$1.00</td>
+          </tr>
+          <tr>
+              <td class="border px-4 py-2">Banana</td>
+              <td class="border px-4 py-2">Yellow</td>
+              <td class="border px-4 py-2">$0.75</td>
+          </tr>
+          <tr>
+              <td class="border px-4 py-2">Orange</td>
+              <td class="border px-4 py-2">Orange</td>
+              <td class="border px-4 py-2">$1.25</td>
+          </tr>
+          <tr>
+              <td class="border px-4 py-2">Grapes</td>
+              <td class="border px-4 py-2">Purple</td>
+              <td class="border px-4 py-2">$2.50</td>
+          </tr>
+          <tr>
+              <td class="border px-4 py-2">Kiwi</td>
+              <td class="border px-4 py-2">Green</td>
+              <td class="border px-4 py-2">$1.50</td>
+          </tr>
+        </tbody>
+      </table>
+    </ui-data-table>
+  </div>
+</ui-component-preview>

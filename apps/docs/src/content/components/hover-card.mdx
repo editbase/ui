@@ -1,0 +1,38 @@
+---
+title: 'Hover Card'
+description: 'A card that appears when the user hovers over an element.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <ui-hover-card class="max-w-md">
+      <div data-trigger>
+        @lachlanhawthorne
+      </div>
+
+      <div data-content>
+        <div>
+          <h4>Hover Card</h4>
+          <p>This is a hover card component that can be used to display content when the user hovers over an element.</p>
+        </div>
+      </div>
+    </ui-hover-card>
+  </div>
+</ui-component-preview>

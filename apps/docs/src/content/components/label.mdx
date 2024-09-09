@@ -1,0 +1,33 @@
+---
+title: 'Label'
+description: 'A component that displays a label for an input field.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <ui-checkbox>
+      <input type="checkbox" id="trigger"/>
+      <button>
+        <i class="ri-check-line"></i>
+      </button>
+      <label for="trigger" class="pl-2">Accept terms and conditions</label>
+    </ui-checkbox>
+  </div>
+</ui-component-preview>

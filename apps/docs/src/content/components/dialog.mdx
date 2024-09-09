@@ -1,0 +1,59 @@
+---
+title: 'Dialog'
+description: 'A modal dialog that interrupts the user with important content and expects a response.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <div data-content>
+    <div class="max-w-sm py-10 flex justify-center">
+
+     <ui-dialog>
+        <input type="radio" name="a-new-dialog" id="dialog-trigger" data-trigger/>
+
+        <label for="dialog-trigger" type="button" data-trigger>
+          <ui-button>
+              <button>
+              <i class="ri-layout-bottom-2-line flex justify-center items-center w-[16px]"></i>
+              <span>Open Dialog</span>
+              </button>
+          </ui-button>
+        </label>
+
+        <input type="radio" name="a-new-dialog" id="dialog-overlay" checked/>
+        
+        <label for="dialog-overlay" data-overlay></label>
+
+        <div data-dialog-content>
+          <div>
+              <h3>Are you absolutely sure?</h3>
+              <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+              <div data-action-buttons>
+              <label for="dialog-overlay">
+                  <button>Cancel</button>
+              </label>
+
+              <button>Continue</button>
+              </div>
+          </div>
+        </div>
+    </ui-dialog>
+
+    </div>
+  </div>
+</ui-component-preview>

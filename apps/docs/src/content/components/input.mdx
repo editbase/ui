@@ -1,0 +1,29 @@
+---
+title: 'Input'
+description: 'A component that allows the user to enter text.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <ui-input class="max-w-md">
+      <input type="text" placeholder="Enter text..."/>
+    </ui-input>
+  </div>
+</ui-component-preview>

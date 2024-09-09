@@ -1,0 +1,54 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+
+import Doc from '../../../../components/Doc.astro';
+
+export async function getStaticPaths() {
+	const components = await getCollection('components');
+	const docs = await getCollection('docs');
+
+	return components.map((component) => {
+		const componentIndex = components.findIndex((x) => x.slug === component.slug);
+		let prevDoc = components[componentIndex - 1];
+		let nextDoc = components[componentIndex + 1];
+
+		if(prevDoc?.id || nextDoc?.id) {
+
+			if (!prevDoc) {
+				prevDoc = {
+					slug: "usage",
+					id: "usage",
+					data: {
+						title: "Usage",
+					},
+				}
+			}
+
+			if (!nextDoc) {
+				nextDoc = {}
+			}
+			
+			return {
+				params: { slug: component.slug },
+				props: {
+					docs,
+					components,
+					component,
+					prevDoc,
+					nextDoc
+				},
+			}
+		}
+	});
+}
+
+
+type Props = CollectionEntry<'components'>;
+
+const props = Astro.props;
+const { Content } = await props.component.render();
+
+export const partial = true;
+---
+
+<Doc component={props.component} prevDoc={props.prevDoc} nextDoc={props.nextDoc}></Doc>

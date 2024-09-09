@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expandable Component with Animation</title>
+  <meta name="description" content="Expandable Component with Animation">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body id="app" class="dark">
+  
+  <ui-accordion data-state="closed">
+    <details data-content>
+      <summary data-trigger>Expand/Collapse</summary>
+      <div>
+        <div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </div>
+      </div>
+    </details>
+  </ui-accordion>
+
+  <span>Date Picker</span>
+
+  <ui-date-picker data-state="closed">
+    <div data-date-picker>
+      <div data-date-input>
+        <input type="date" />
+      </div>
+    </div>
+  </ui-date-picker>
+
+  <script type="module" src="./src/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+---
+title: 'Date Picker'
+description: 'A component that allows the user to select a date.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <input type="date" id="datepicker" class="w-full max-w-xs rounded-md border border-muted-foreground/20 bg-muted-foreground/5 px-4 py-2 text-sm text-foreground appearance-none" />
+
+    {/* https://codepen.io/eliseodannunzio/details/mdpMGgm */}
+  </div>
+</ui-component-preview>

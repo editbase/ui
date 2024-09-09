@@ -1,0 +1,40 @@
+ui-component-preview {
+  /* @apply border border-muted-foreground/15; */
+  @apply flex flex-col gap-5 mb-5;
+}
+
+ui-component-preview > [data-controls] {
+  @apply flex flex-row items-center justify-between;
+}
+
+ui-component-preview > [data-controls] > [data-tab-controls] {
+  @apply flex flex-row items-center bg-muted-foreground/10 rounded-lg px-1 py-1 text-xs font-medium h-[40px] gap-1;
+}
+
+ui-component-preview > [data-controls] > [data-tab-controls] > button {
+  @apply bg-transparent rounded-md px-4 py-1.5 text-[0.75rem] h-full;
+}
+
+ui-component-preview > [data-controls] > [data-tab-controls] > button:first-child {
+  @apply bg-muted-foreground/10;
+}
+
+ui-component-preview > [data-controls] > [data-content-controls] {
+  @apply flex flex-row gap-2;
+}
+
+ui-component-preview > [data-controls] > [data-content-controls] > button {
+  @apply w-[40px] h-[40px] flex flex-row items-center justify-center rounded-lg bg-[rgba(255,255,255,0.08)];
+}
+
+ui-component-preview > [data-controls] > [data-content-controls] > button > i {
+  @apply text-base;
+}
+
+ui-component-preview > [data-content] {
+  @apply flex flex-col flex-1 justify-center items-center min-h-[300px] border border-muted-foreground/15 rounded-lg;
+}
+
+/* ui-component-preview > [data-content] > * {
+  @apply w-full;
+} */

@@ -1,0 +1,19 @@
+ui-avatar {
+  @apply flex w-14 h-14 relative rounded-full overflow-hidden bg-background select-none resize;
+}
+
+ui-avatar [data-image] {
+  @apply w-full h-full object-cover;
+}
+
+ui-avatar [data-fallback] {
+  @apply w-full h-full flex flex-1 absolute bg-gradient-to-b from-muted-foreground/30 to-muted-foreground/15;
+}
+
+ui-avatar [data-fallback] foreignObject {
+  @apply w-full h-full flex flex-col justify-center items-center;
+}
+
+ui-avatar [data-fallback] foreignObject > * {
+  @apply text-[40px] leading-[100px] text-center;
+}

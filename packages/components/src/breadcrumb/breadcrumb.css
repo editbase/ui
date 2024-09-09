@@ -1,0 +1,41 @@
+ui-breadcrumb ol {
+  @apply flex flex-row list-none gap-4 items-center text-sm font-light;
+}
+
+ui-breadcrumb ol li[data-separator] {
+  @apply flex h-1.5 w-1.5 border-r border-b border-current -rotate-45 opacity-75;
+}
+
+ui-breadcrumb ol li:not(:last-child) {
+  @apply text-muted-foreground;
+}
+
+ui-breadcrumb ui-popover label[for="trigger"] {
+  @apply bg-transparent rounded-md h-7 w-7 font-normal flex justify-center items-center border border-muted-foreground/15 transition-colors text-[1.1em] text-muted-foreground;
+}
+
+ui-breadcrumb ui-popover label[for="trigger"]:hover {
+  @apply !bg-muted-foreground/15 border-transparent;
+}
+
+ui-breadcrumb ui-popover input[id="trigger"]:checked ~ label[for="trigger"] {
+  @apply bg-muted-foreground/10 border-transparent;
+}
+
+
+ui-breadcrumb ui-popover [data-popover-content] {
+  @apply !left-auto translate-x-[auto]
+}
+
+ui-breadcrumb ui-popover [data-popover-content] > * {
+  @apply p-1;
+}
+
+ui-breadcrumb ui-popover [data-popover-content] a {
+  @apply bg-transparent rounded px-3 py-1.5 text-sm font-light transition-colors;
+
+  &:hover {
+    @apply bg-muted-foreground/15;
+  }
+}
+

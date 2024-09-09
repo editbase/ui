@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/inter-variable.woff2') format('woff2');
+}
+
+body {
+  font-family: 'Inter', sans-serif !important;
+}
+
+body.dark {
+  color-scheme: dark;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border-border; */
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/*  markdown styling */
+
+section#content .doc {
+  @apply flex flex-col gap-3;
+}
+
+section#content .doc > h2 {
+  @apply text-2xl font-semibold tracking-[-0.02em];
+}
+
+section#content .doc > p {
+  @apply text-sm text-muted-foreground font-light max-w-xl leading-relaxed;
+}
+
+
+/* table styles */
+
+.sort-indicator::after {
+  content: '\25B2';
+  display: inline-block;
+  margin-left: 0.25rem;
+  opacity: 0.5;
+}
+
+.sort-desc .sort-indicator::after {
+  content: '\25BC';
+}
+
+[href$="name"] .sort-indicator { display: none; }
+[href$="color"] .sort-indicator { display: none; }
+[href$="price"] .sort-indicator { display: none; }
+
+[href$="name"]:target .sort-indicator,
+[href$="color"]:target .sort-indicator,
+[href$="price"]:target .sort-indicator {
+  display: inline-block;
+}
+
+[href$="name"]:target:not(.sort-desc) ~ [href$="name"].sort-desc .sort-indicator,
+[href$="color"]:target:not(.sort-desc) ~ [href$="color"].sort-desc .sort-indicator,
+[href$="price"]:target:not(.sort-desc) ~ [href$="price"].sort-desc .sort-indicator {
+  display: inline-block;
+}

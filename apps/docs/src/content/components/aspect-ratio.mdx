@@ -1,0 +1,30 @@
+---
+title: 'Aspect Ratio'
+description: 'A component that allows you to specify a ratio for an element.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <div data-content class="flex justify-center items-center p-10">
+    <ui-aspect-ratio style="--aspect-ratio: 16 / 9" class="max-w-sm w-full rounded-md overflow-hidden">
+      <div data-wrapper>
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAxNiA5Jz48L3N2Zz4="/>
+      </div>
+    </ui-aspect-ratio>
+  </div>
+</ui-component-preview>

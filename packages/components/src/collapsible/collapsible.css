@@ -1,0 +1,70 @@
+ui-collapsible > input[type="checkbox"] {
+  @apply hidden;
+}
+
+ui-collapsible [data-header] {
+  @apply flex flex-row justify-between items-center text-sm font-medium gap-4 mb-4;
+}
+
+ui-collapsible [data-header] button {
+  @apply w-10 h-10 rounded-lg border border-muted-foreground/15 pointer-events-none cursor-pointer transition-colors flex justify-center items-center;
+}
+
+ui-collapsible [data-header] label {
+  @apply cursor-pointer;
+}
+
+ui-collapsible [data-header] label:hover button {
+  @apply border-transparent bg-muted-foreground/15;
+}
+
+ui-collapsible [data-header] button i {
+  @apply text-[1.05em] transition-opacity absolute;
+}
+
+/* Expand / Collapse */
+
+ui-collapsible [data-header] button i[data-collapse] {
+  @apply opacity-0;
+}
+
+ui-collapsible > input[type="checkbox"]:checked ~ [data-header] button i[data-collapse] {
+  @apply opacity-100;
+}
+
+ui-collapsible [data-header] button i[data-expand] {
+  @apply opacity-100;
+}
+
+ui-collapsible > input[type="checkbox"]:checked ~ [data-header] button i[data-expand] {
+  @apply opacity-0;
+}
+
+/* Content */
+
+ui-collapsible [data-content] {
+  @apply grid grid-rows-[0fr] transition-[grid-template-rows] ease-in-out duration-500;
+}
+
+ui-collapsible [data-content] > * {
+  @apply overflow-hidden flex flex-col gap-3;
+}
+
+ui-collapsible > input[type="checkbox"]:checked ~ [data-content] {
+  @apply grid-rows-[1fr];
+}
+
+/* Fade */
+ui-collapsible [data-content] {
+  @apply opacity-0 transition-all ease-in-out duration-500;
+}
+
+ui-collapsible > input[type="checkbox"]:checked ~ [data-content] {
+  @apply opacity-100;
+}
+
+/* Content */
+
+ui-collapsible [data-content] > * > * {
+  @apply rounded-md border border-muted-foreground/20 px-4 py-3 font-mono text-sm;
+}

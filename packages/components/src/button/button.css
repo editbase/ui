@@ -1,0 +1,15 @@
+ui-button {
+  @apply flex rounded-md bg-background select-none w-max;
+}
+
+ui-button button {
+  @apply flex flex-row items-center justify-center gap-2.5 rounded-md px-4 py-1 text-xs font-normal bg-muted-foreground/10 transition-colors cursor-pointer shadow-[0_1px_1px_rgba(255,255,255,0.05)_inset] min-h-[40px];
+}
+
+ui-button button > i {
+  @apply text-lg tracking-tight;
+}
+
+ui-button button > span {
+  @apply text-[1.05em];
+}

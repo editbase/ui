@@ -1,0 +1,3 @@
+ui-input input {
+  @apply bg-transparent text-sm text-foreground appearance-none h-12 w-full border border-muted-foreground/20 rounded-lg px-4;
+}

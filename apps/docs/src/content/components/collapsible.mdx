@@ -1,0 +1,57 @@
+---
+title: 'Collapsible'
+description: 'A component that can be collapsed or expanded.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <ui-collapsible>
+      <input type="checkbox" id="trigger"/>
+      
+      <div data-header>
+        <h5>@peduarte starred 3 repositories</h5>
+
+        <label for="trigger" class="pl-2">
+          <button>
+            <i class="ri-expand-up-down-line" data-expand></i>
+            <i class="ri-contract-up-down-line" data-collapse></i>
+          </button>
+        </label>
+      </div>
+
+      <div data-content>
+        <div>
+          <div>
+            @radix-ui/colors
+          </div>
+
+          <div>
+            @radix-ui/colors
+          </div>
+
+          <div>
+            @radix-ui/colors
+          </div>
+        </div>
+      </div>
+
+    </ui-collapsible>
+  </div>
+</ui-component-preview>

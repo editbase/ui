@@ -1,0 +1,38 @@
+---
+title: 'Copy'
+description: 'A component that allows the user to copy text to the clipboard.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center flex-col gap-3">
+    <ui-copy>
+      <ui-button data-trigger>
+        <button>
+          <i class="ri-clipboard-line"></i>
+          <span>Copy</span>
+        </button>
+      </ui-button>  
+    </ui-copy>
+
+    <noscript>
+      <p class="max-w-md text-sm text-muted-foreground">This will not work without JavaScript enabled.</p>
+    </noscript>
+  </div>
+</ui-component-preview>

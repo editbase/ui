@@ -1,0 +1,46 @@
+---
+export const partial = true;
+---
+
+<div class="flex flex-col gap-8 h-[500px] justify-center items-start">
+  <div class="flex flex-col gap-4">
+    <h1 class="text-4xl font-semibold text-foreground tracking-tight">Build your component library</h1>
+    <p class="text-xl text-muted-foreground">Unstyled and styled UI components built with web components.<br/> Accessible, customizable, and framework-agnostic.</p>	
+  </div>
+
+  <div class="flex flex-row gap-4 items-center">
+    <a href="/docs/components/accordion">
+      <button class="bg-foreground text-background text-[0.8rem] tracking-[-0.005rem] font-medium rounded px-4 py-2 transition-colors hover:bg-muted-foreground hover:text-background">Get Started</button>
+    </a>
+    <button class="bg-foreground/10 text-foreground text-[0.8rem] tracking-[-0.005rem] font-medium rounded px-4 py-2 transition-colors hover:bg-muted-foreground hover:text-background">View Examples</button>
+  </div>
+
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pb-12">
+  <!-- Row 1: 2 components -->
+  <div class="bg-foreground/5 p-6 rounded-lg">
+    <h2 class="text-xl font-bold mb-2">Component 1</h2>
+    <p>Content for component 1</p>
+  </div>
+  <div class="bg-foreground/5 p-6 rounded-lg">
+    <h2 class="text-xl font-bold mb-2">Component 2</h2>
+    <p>Content for component 2</p>
+  </div>
+
+  <!-- Row 2: 1 component (full width) -->
+  <div class="md:col-span-2 bg-foreground/5 p-6 rounded-lg">
+    <h2 class="text-xl font-bold mb-2">Component 3</h2>
+    <p>Content for component 3 (full width)</p>
+  </div>
+
+  <!-- Row 3: 2 components -->
+  <div class="bg-foreground/5 p-6 rounded-lg">
+    <h2 class="text-xl font-bold mb-2">Component 4</h2>
+    <p>Content for component 4</p>
+  </div>
+  <div class="bg-foreground/5 p-6 rounded-lg">
+    <h2 class="text-xl font-bold mb-2">Component 5</h2>
+    <p>Content for component 5</p>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+---
+title: 'Drawer'
+description: 'A component that displays a panel that can be slid into view from the edge of the screen.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <div data-content>
+    <div class="max-w-sm py-10 flex justify-center">
+
+      <ui-dialog>
+        <input type="radio" name="dialog" id="trigger"/>
+        <label for="trigger" type="button">
+          <ui-button>
+            <button>
+              <span>Open Drawer</span>
+            </button>
+          </ui-button>
+        </label>
+
+        <input type="radio" name="dialog" id="overlay" checked/>
+        <label for="overlay" data-overlay></label>
+
+        <div data-dialog-content>
+          <div>
+            <h3>Are you absolutely sure?</h3>
+            <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+            <div data-action-buttons>
+              <label for="overlay">
+                <button>Cancel</button>
+              </label>
+
+              <button>Continue</button>
+            </div>
+          </div>
+        </div>
+      </ui-dialog>
+
+    </div>
+  </div>
+</ui-component-preview>

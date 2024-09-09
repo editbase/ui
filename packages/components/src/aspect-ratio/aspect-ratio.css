@@ -1,0 +1,11 @@
+ui-aspect-ratio [data-wrapper] {
+  @apply relative w-full max-w-full pb-[calc(100/var(--aspect-ratio)*100%)];
+}
+
+ui-aspect-ratio [data-wrapper] > * {
+  @apply absolute inset-0 w-full h-full;
+}
+
+ui-aspect-ratio [data-wrapper] > img {
+  @apply bg-gradient-to-b from-muted-foreground/10 to-muted-foreground/20;
+}

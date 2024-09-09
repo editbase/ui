@@ -1,0 +1,6 @@
+
+/* Accordion */
+
+.theme-gadigal ui-accordion [data-trigger] {
+  /* @apply bg-red-600; */
+}

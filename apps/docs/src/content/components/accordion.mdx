@@ -1,0 +1,85 @@
+---
+title: 'Accordion'
+description: 'A set of stacked expandable panels with headings and content.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <div data-content>
+    <div class="max-w-sm py-10">
+        <ui-accordion>
+          <label>
+            <input type="radio" name="accordion" id="trigger"/>
+            <h2>Is it accessible?</h2>
+            <i class="ri-arrow-down-s-line"></i>
+          </label>
+
+          <label data-collapse>
+            <input type="radio" name="accordion" id="collapse"/>
+          </label>
+
+          <div data-content>
+            <div>
+              <p>Yes. It adheres to the WAI-ARIA design pattern.</p>
+            </div>
+          </div>
+        </ui-accordion>
+
+        <ui-accordion>
+          <label>
+            <input type="radio" name="accordion" id="trigger"/>
+            <h2>Is it styled?</h2>
+            <i class="ri-arrow-down-s-line"></i>
+          </label>
+
+          <label data-collapse>
+            <input type="radio" name="accordion" id="collapse"/>
+          </label>
+
+          <div data-content>
+            <div>
+              <p>Yes. It comes with default styles that matches the other components' aesthetic.</p>
+            </div>
+          </div>
+        </ui-accordion>
+
+        <ui-accordion>
+          <label>
+            <input type="radio" name="accordion" id="trigger"/>
+            <h2>Is it animated?</h2>
+            <i class="ri-arrow-down-s-line"></i>
+          </label>
+
+          <label data-collapse>
+            <input type="radio" name="accordion" id="collapse"/>
+          </label>
+
+          <div data-content>
+            <div>
+              <p>Yes. It's animated by default, but you can disable it if you prefer.</p>
+            </div>
+          </div>
+        </ui-accordion>
+        
+      </div>
+  </div>
+</ui-component-preview>
+
+## Data
+
+Below you will find the data properties available in the accordion component.

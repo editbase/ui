@@ -1,0 +1,33 @@
+ui-checkbox {
+  @apply flex flex-row items-center justify-start;
+}
+
+ui-checkbox input[type="checkbox"],
+ui-checkbox button {
+  @apply w-4 h-4 rounded-sm;
+}
+
+ui-checkbox input[type="checkbox"] {
+  @apply appearance-none opacity-50  z-10 cursor-pointer bg-transparent;
+}
+
+ui-checkbox button {
+  @apply absolute bg-transparent border border-foreground transition-colors ease-in-out pointer-events-none z-0 flex justify-center items-center;
+}
+
+ui-checkbox input[type="checkbox"]:checked + button {
+  @apply bg-foreground;
+}
+
+ui-checkbox button  {
+  @apply text-transparent;
+}
+
+ui-checkbox input[type="checkbox"]:checked + button {
+  @apply text-background;
+}
+
+
+ui-checkbox label {
+  @apply text-sm
+}

@@ -1,0 +1,41 @@
+---
+title: 'Input OTP'
+description: 'A component that allows the user to enter a one-time password.'
+---
+
+<ui-component-preview data-tab="preview">
+  <div data-controls>
+    <div data-tab-controls> 
+      <button data-tab="preview">Preview</button>
+      <button data-tab="code">Code</button>
+    </div>
+
+    <div data-content-controls>
+      <button>
+        <i class="ri-add-line"></i>
+      </button>
+       <button>
+        <i class="ri-clipboard-line"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <div data-content class="flex justify-center items-center text-center">
+    <ui-input-otp class="max-w-md">
+      <div data-group>
+        <input type="text"/>
+        <input type="text"/>
+        <input type="text"/>
+      </div>
+      <div data-separator>
+        &middot;
+      </div>
+      <div data-group>
+        <input type="text"/>
+        <input type="text"/>
+        <input type="text"/>
+      </div>
+    </ui-input-otp>
+  </div>
+</ui-component-preview>

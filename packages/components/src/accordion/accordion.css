@@ -1,0 +1,45 @@
+ui-accordion {
+  @apply flex flex-col w-full relative overflow-hidden;
+}
+
+ui-accordion > label {
+  @apply flex flex-row items-center justify-between font-medium select-none cursor-pointer h-[50px];
+}
+
+ui-accordion > label input {
+  @apply hidden;
+}
+
+ui-accordion > label i {
+  @apply transition-transform duration-500 opacity-50;
+}
+
+ui-accordion input:checked ~ i {
+  @apply rotate-180;
+}
+
+ui-accordion > [data-content] {
+  @apply grid grid-rows-[0fr] transition-[grid-template-rows] ease-in-out duration-500;
+}
+
+ui-accordion > [data-content] > div {
+  @apply overflow-hidden border-b border-muted-foreground/15; 
+}
+
+ui-accordion > [data-content] > div p {
+  @apply text-sm pr-16 pb-4 font-light;
+}
+
+ui-accordion label:not([data-collapse]):has(input:checked) ~ [data-content] {
+  @apply grid-rows-[1fr];
+}
+
+/* Collapse */
+
+ui-accordion label:not([data-collapse]):has(input:checked) ~ [data-collapse] {
+  @apply pointer-events-auto;
+}
+
+ui-accordion label[data-collapse] {
+  @apply w-full absolute pointer-events-none;
+}
